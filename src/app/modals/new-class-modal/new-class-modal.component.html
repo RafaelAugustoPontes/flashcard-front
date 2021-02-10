@@ -1,0 +1,8 @@
+<app-modal-base title="Nova categoria" (saveEmitter)="save()" (cancelEmitter)="cancel()">
+  <form [formGroup]="classForm" *ngIf="classForm">
+      <div class="form-group">
+        <label for="term">Nome</label>
+        <input type="text" class="form-control" name="name" formControlName="name">
+      </div>
+  </form>
+</app-modal-base>

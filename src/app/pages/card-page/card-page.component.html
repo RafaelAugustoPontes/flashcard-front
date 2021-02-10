@@ -1,0 +1,23 @@
+<div class="jumbotron">
+  <h1>{{classCard.name}}</h1>
+  <div class="container">
+    <div class="row">
+      <button type="button" class="btn btn-primary m-2" (click)="openModalNewCard()">Novo cartão</button>
+    </div>
+    <div class="row card-group">
+      <div class="col-4 mb-1 mt-2" *ngFor="let item of cards">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">{{item.term}}</h5>
+            <p class="card-text">{{item.definition}}</p>
+            <a (click)="edit(item.id)" class="btn btn-primary mr-1">Editar</a>
+            <a (click)="remove(item.id)" class="btn btn-danger">Excluir</a>
+          </div>
+          <div class="card-footer text-muted">
+            <ngb-rating [(rate)]="currentRate"></ngb-rating>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

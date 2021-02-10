@@ -1,0 +1,15 @@
+<app-modal-base title="Novo cartão" (saveEmitter)="save()" (cancelEmitter)="cancel()">
+  <form [formGroup]="cardForm" *ngIf="cardForm">
+    <div class="form-group">
+     {{cardClass.name}}
+    </div>
+      <div class="form-group">
+        <label for="term">Termo</label>
+        <input type="text" class="form-control" name="term" formControlName="term">
+      </div>
+      <div class="form-group">
+        <label for="definition">Definição</label>
+        <input type="text" class="form-control" name="definition" formControlName="definition">
+      </div>
+  </form>
+</app-modal-base>

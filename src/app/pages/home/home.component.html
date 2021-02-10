@@ -1,0 +1,27 @@
+<div class="jumbotron">
+  <h1>Minhas categorias</h1>
+  <div class="container">
+    <div class="row">
+      <button type="button" class="btn btn-primary m-2" (click)="openModalNewClass()">Nova categoria</button>
+    </div>
+    <div class="row card-group">
+      <div class="col-4 mb-1 mt-2" *ngFor="let classCard of classes">
+        <div class="card">
+          <img class="card-img-top"
+            src="https://images.unsplash.com/photo-1476977251893-330046eb5ec8?ixid=MXwxMjA3fDB8MHxzZWFyY2h8N3x8Y2FuYWRhfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60">
+          <div class="card-body">
+            <h5 class="card-title">{{classCard.name}}</h5>
+            <div>
+              <p class="card-text">
+                Cartões: {{classCard.numberOfCards}}
+              </p>
+              <a class="btn btn-link mr-1" [routerLink]="['/cardClass', classCard.id]">Abrir</a>
+              <a class="btn btn-primary mr-1" (click)="update(classCard.id)">Editar</a>
+              <a class="btn btn-danger" (click)="deleteClass(classCard.id)">Excluir</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
